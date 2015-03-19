@@ -25,7 +25,7 @@ As a mother of 2 teenage sons, I know that teenagers love to use apps. My kids a
 
 ## Data Structure:
 
-
+```
 
 user  - profile   - image
 
@@ -115,7 +115,7 @@ user  - profile   - image
 
                       - array of objects {activityName: value, activityType: value}
 
-
+```
 
 ## Technologies:
 
