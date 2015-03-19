@@ -28,91 +28,56 @@ As a mother of 2 teenage sons, I know that teenagers love to use apps. My kids a
 ```
 
 user  - profile   - image
-
                       - image url
-
                   - name
-
                       - string
-
                   - high school name
-
                       - string
-
                   - high school mascot
-
                       - string
-
                   - expected graduation date
-
                       - date object
 
       - careers
-
                   - array of objects {career: value, description: value}
 
       - colleges
-
                   - array of objects {university: value, url: value, location: value, latlong: value, onlineApp: value}
 
       - points
-
                   - curriculum
-
                       - array of objects {className: value, classScore: number}
-
                   - activities
-
                       - array of objects {activityType: value, activityScore: number}
 
       - badges
-
                   - curriculum
-
                       - array of objects {badgeName: value}
-
                   - activities
-
                       - array of objects {badgeName: value}
 
       - freshman
-
                   - curriculum
-
                       - array of objects {className: value, classGrade: floating point number}
-
                   - activities
-
                       - array of objects {activityName: value, activityType: value}
 
       - sophomore
-
                   - curriculum
-
                       - array of objects {className: value, classGrade: floating point number}
-
                   - activities
-
                       - array of objects {activityName: value, activityType: value}
 
       - junior
-
                   - curriculum
-
                       - array of objects {className: value, classGrade: floating point number}
-
                   - activities
-
                       - array of objects {activityName: value, activityType: value}
 
       - senior
-
                   - curriculum
-
                       - array of objects {className: value, classGrade: floating point number}
-
                   - activities
-
                       - array of objects {activityName: value, activityType: value}
 
 ```
