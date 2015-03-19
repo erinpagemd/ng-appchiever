@@ -120,3 +120,4 @@ python -m SimpleHTTPServer
 * properly link firebase
 * autoprefixer? Something for IE support
 * do i use a service for a constructor in angular
+* event listener on video to restart: Should you have a problem with the loop attribute (as we had in the past), listen to the videoEnd event and call the play() method when it fires.

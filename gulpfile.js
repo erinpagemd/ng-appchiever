@@ -3,9 +3,11 @@ var jade = require('gulp-jade');
 var copy = require('gulp-copy');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var livereload = require('gulp-livereload');
 
 //////////WATCH////////////////////////////////////
 gulp.task('watch', function () {
+  livereload.listen();
   watch('./app/**/*', function() {
     gulp.start('build');
   });
@@ -15,7 +17,8 @@ gulp.task('sass', function () {
   gulp.src('./app/**/*.scss')
     .pipe(sass())
     .on('error', console.error.bind(console))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./public/'))
+    .pipe(livereload());
 });
 //////////COPY////////////////////////////////////
 gulp.task('copy', function () {
@@ -28,6 +31,8 @@ gulp.task('jade', function() {
     .pipe(jade({pretty: true, doctype: 'html'}))
     .on('error', console.error.bind(console))
     .pipe(gulp.dest('./public/'))
+    .pipe(livereload({start: true}));
+
 });
 //////////DEFAULT////////////////////////////////////
 gulp.task('build', ['copy', 'jade', 'sass']);
