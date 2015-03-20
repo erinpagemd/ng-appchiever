@@ -93,21 +93,7 @@ user  - profile
 * Angular-UI-Router
 * AngularFire
 
-## To Use:
-
-###Use the following commands:
-```
-npm install
-bower install
-gulp
-```
-In separate terminal window use
-
-```
-python -m SimpleHTTPServer
-```
-
-## Features
+## Features:
 * AngularFire
 * Firebase Login
 
@@ -119,3 +105,17 @@ python -m SimpleHTTPServer
 * do i use a service for a constructor in angular
 * display based on login
 * clean up controller functions
+
+## To Use:
+
+#### Clone the project, then from the root directory use the following console commands:
+```
+npm install
+bower install
+gulp
+```
+In separate terminal window use
+
+```
+python -m SimpleHTTPServer
+```
