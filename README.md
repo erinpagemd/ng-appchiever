@@ -11,15 +11,16 @@ As a mother of 2 teenage sons, I know that teenagers love to use apps. My kids a
 ## API Information:
 
 ### NoSQL Database
-* Firebase
+* Firebase https://appchiever.firebaseio.com/
+* AngularFire https://www.firebase.com/docs/web/libraries/angular/
 
 ### College Information
-* I will need a list of colleges for the user to choose from to express interest.
+* Need a list of colleges for the user to choose from to express interest.
 * Currently researching sources for this information. The most comprehensive seems to be IPEDS. They have a data center at nces.ed.gov. Download the information as a csv and convert to json data.
 * Sent a request to matchcollege.com to use their api. Sent request to api_usage@matchcollege.com.
 
 ### Career Information
-* I will need a list of careers/occupations for the user to choose from to express interest.
+* Need a list of careers/occupations for the user to choose from to express interest.
 * dev.optimalresume.com/apps has a pretty decent resource. Need to look further into making the api call. Looks like I must do a POST to receive a token and then do the GET.
 * ONET Resource Center
 
@@ -27,16 +28,8 @@ As a mother of 2 teenage sons, I know that teenagers love to use apps. My kids a
 
 ```
 
-user  - profile   - image
-                      - image url
-                  - name
-                      - string
-                  - high school name
-                      - string
-                  - high school mascot
-                      - string
-                  - expected graduation date
-                      - date object
+user  - profile
+                  - array of objects {image: value, name: value, highschool: value, graddate: value, location: value}
 
       - careers
                   - array of objects {career: value, description: value}
@@ -98,6 +91,7 @@ user  - profile   - image
 * Jade
 * Angular
 * Angular-UI-Router
+* AngularFire
 
 ## To Use:
 
@@ -113,10 +107,15 @@ In separate terminal window use
 python -m SimpleHTTPServer
 ```
 
-## What is coming next
+## Features
+* AngularFire
+* Firebase Login
+
+
+### What is coming next
 * live reload
 * deploy script
-* boilerplate content for angular structure
-* properly link firebase
 * autoprefixer? Something for IE support
 * do i use a service for a constructor in angular
+* display based on login
+* clean up controller functions
