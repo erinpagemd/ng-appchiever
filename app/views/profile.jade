@@ -1,26 +1,26 @@
 .container
-    form.row
+    form.row.main-form
       .form-group
         label(for='firstname-profile') First Name
-        input#firstname-profile.form-control(placeholder='first name')
+        input#firstname-profile.form-control(ng-model='firstname' placeholder='first name')
       .form-group
         label(for='lastname-profile') Last Name
-        input#lastname-profile.form-control(placeholder='last name')
+        input#lastname-profile.form-control(ng-model='lastname' placeholder='last name')
       .form-group
         label(for='schoolname-profile') School Name
-        input#schoolname-profile.form-control(placeholder='school name')
+        input#schoolname-profile.form-control(ng-model='schoolname' placeholder='school name')
       .form-group
         label(for='schoolmascot-profile') School Mascot
-        input#schoolmascot-profile.form-control(placeholder='school mascot')
+        input#schoolmascot-profile.form-control(ng-model='schoolmascot' placeholder='school mascot')
       .form-group
         label(for='gradyear-profile') Graduation Year
-        input#gradyear-profile.form-control(placeholder='graduation year')
+        input#gradyear-profile.form-control(ng-model='gradyear' placeholder='graduation year')
       .form-group
         label(for='gradcity-profile') City
-        input#gradcity-profile.form-control(placeholder='city')
+        input#gradcity-profile.form-control(ng-model='gradcity' placeholder='city')
       .form-group
         label(for='gradstate-profile') State
-        input#gradstate-profile.form-control(placeholder='state')
+        input#gradstate-profile.form-control(ng-model='gradstate' placeholder='state')
       .form-group
         label(for='picurl-profile') Picture URL
-        input#picurl-profile.form-control(placeholder='picture url')
+        input#picurl-profile.form-control(ng-model='picurl' placeholder='picture url')
