@@ -94,7 +94,6 @@ user  - profile
 * AngularFire
 
 ## Features:
-* AngularFire
 * Firebase Login
 
 ### What is coming next
@@ -105,6 +104,7 @@ user  - profile
 * ng-hide and show in login.jade, login.js
 * logout button does something
 * button on home.jade does something
+* fb as a constant
 
 ## To Use:
 

@@ -3,6 +3,14 @@ angular
 .factory('AuthFactory', function (BASE_URL) {
   var fb = new Firebase(BASE_URL);
 
+  function loginStatus () {
+    if (authData) {
+      console.log('User ' + authData.uid + ' is logged in with ' + authData.provider);
+    } else {
+      console.log('User is logged out');
+    }
+  }
+
   function register (loginObj, cb) {
     fb.createUser(loginObj, cb);
     console.log(fb.getAuth());
