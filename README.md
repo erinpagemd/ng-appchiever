@@ -101,8 +101,6 @@ user  - profile
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
-* display based on login
-* clean up controller functions
 * dry principle in login.js
 * ng-hide and show in login.jade, login.js
 * logout button does something
