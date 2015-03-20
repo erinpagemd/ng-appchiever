@@ -105,10 +105,11 @@ user  - profile
 * do i use a service for a constructor in angular
 * display based on login
 * clean up controller functions
+* creating user also logs in user
 
 ## To Use:
 
-#### Clone the project, then from the root directory use the following console commands:
+Clone the project, then from the root directory use the following console commands:
 ```
 npm install
 bower install

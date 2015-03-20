@@ -1,20 +1,19 @@
 angular
 .module('appchiever')
-.factory('AuthFactory', AuthFactory)
+.factory('AuthFactory', function (BASE_URL) {
+  var fb = new Firebase(BASE_URL);
 
-function AuthFactory (BASE_URL) {
-  return {
-    register: function (loginObj, cb) {
-      var fb = new Firebase(BASE_URL);
-      fb.createUser(loginObj, cb);
-    },
-    login: function(loginObj, cb) {
-      var fb = new Firebase(BASE_URL);
-      fb.authWithPassword(loginObj, cb);
-    },
-    logout: function (cb) {
-      var fb = new Firebase(BASE_URL);
-      fb.unauth(cb);
-    }
-  };
-}
+  function register (loginObj, cb) {
+    fb.createUser(loginObj, cb);
+  }
+
+  function login (loginObj, cb) {
+    fb.authWithPassword(loginObj, cb);
+  }
+
+  function logout (cb) {
+    fb.unauth(cb);
+  }
+
+  return {register:register, login:login, logout:logout};
+});
