@@ -1,2 +1,5 @@
 angular
-.module(appchiever)
+.module('appchiever')
+.controller('ProfileCtrl', ProfileController)
+
+function ProfileController () {};

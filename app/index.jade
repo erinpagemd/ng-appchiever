@@ -7,7 +7,7 @@ html
     link(rel='stylesheet' href='vendor/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet' href='index.css' type='text/css')
     title Appchiever
-  body(ng-app='tempApp')
+  body(ng-app='appchiever')
     .nav-container
       nav.navbar.navbar-inverse
        .container-fluid
@@ -22,7 +22,8 @@ html
            ul.nav.navbar-nav.navbar-right
              li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
              li: a(ui-sref='login'): i.fa.fa-bolt &nbsp; Login
-  
+             li: a(ui-sref='profile'): i.fa.fa-user &nbsp; Profile
+
   div(ui-view)
 
       
@@ -34,5 +35,4 @@ html
     script(src='index.js')
     script(src='models/users.js')
     script(src='views/login.js')
-    script(src='views/home.js')
     script(src='views/profile.js')
