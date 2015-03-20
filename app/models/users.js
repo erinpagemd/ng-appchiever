@@ -5,10 +5,14 @@ angular
 
   function register (loginObj, cb) {
     fb.createUser(loginObj, cb);
+    console.log(fb.getAuth());
+
   }
 
   function login (loginObj, cb) {
     fb.authWithPassword(loginObj, cb);
+    console.log(fb.getAuth());
+
   }
 
   function logout (cb) {

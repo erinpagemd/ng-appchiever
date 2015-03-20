@@ -1,10 +1,8 @@
 angular
 .module('appchiever')
-.controller('LoginCtrl', LoginController)
+.controller('LoginCtrl', function ($scope, AuthFactory, BASE_URL) {
 
-function LoginController ($scope, AuthFactory, BASE_URL) {
-
-  $scope.getAuth = function () {
+  $scope.getCreds = function () {
     AuthFactory.login(getLoginObj($scope), function (err, authData) {
       if (err) {
         console.log('Error logging in user: ', err);
@@ -14,20 +12,35 @@ function LoginController ($scope, AuthFactory, BASE_URL) {
       }
     });
   };
+
   $scope.makeAuth = function () {
-    AuthFactory.register(getLoginObj($scope), function (err, authData) {
+    var loginObj = getLoginObj($scope);
+
+    AuthFactory.register(loginObj, function (err, authData) {
       if (err && err.code === 'EMAIL_TAKEN') {
         console.log('Error creating user/ logging in: ', err);
-        $scope.getAuth();
+        AuthFactory.login(loginObj, function (err, authData) {
+          if (err) {
+            console.log('Error in makeAuth email taken', err);
+          } else {
+            console.log('Logged in instead, ', authData);
+          }
+        });
       } else if (err) {
         console.log('Error creating user: ', err)
       } else {
         console.log('User created successfully', authData);
-        $scope.getAuth();
+        AuthFactory.login(loginObj, function (err, authData) {
+          if (err) {
+            console.log('Error in makeAuth logging in user', err);
+          } else {
+            console.log('Logged in as well, ', authData);
+          }
+        })
       }
     });
   };
-}
+});
 
 function getLoginObj ($scope) {
   var username = $scope.username;
