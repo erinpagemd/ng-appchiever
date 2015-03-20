@@ -5,7 +5,7 @@
 //     Firebase = require('firebase');
 
 angular
-.module('tempApp', ['ui.router'])
+.module('appchiever', ['ui.router'])
 .constant('BASE_URL', 'https://appchiever.firebaseio.com/')
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
@@ -13,5 +13,5 @@ angular
   $stateProvider
     .state('home', {url:'/', templateUrl:'views/home.html'})
     .state('login', {url:'/login', templateUrl:'views/login.html', controller:'LoginCtrl'})
-
+    .state('profile', {url:'/profile', templateUrl:'views/profile.html', controller:'ProfileCtrl'})
 });
