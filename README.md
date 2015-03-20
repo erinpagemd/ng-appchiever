@@ -101,7 +101,6 @@ user  - profile
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
-* do i use a service for a constructor in angular
 * display based on login
 * clean up controller functions
 * dry principle in login.js
