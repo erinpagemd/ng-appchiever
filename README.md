@@ -97,7 +97,6 @@ user  - profile
 * AngularFire
 * Firebase Login
 
-
 ### What is coming next
 * live reload
 * deploy script

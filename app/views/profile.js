@@ -1,10 +1,8 @@
 angular
 .module('appchiever')
-.controller('ProfileCtrl', ProfileController)
-
-function ProfileController ($scope, ProfileFactory) {
+.controller('ProfileCtrl', function ($scope, ProfileFactory) {
 
   $scope.save = function () {
     ProfileFactory.save($scope.user);
   };
-};
+});
