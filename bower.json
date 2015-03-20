@@ -21,6 +21,7 @@
     "bootstrap-sass": "~3.3.3",
     "font-awesome": "~4.3.0",
     "angular-ui-router": "~0.2.13",
-    "firebase": "~2.2.2"
+    "firebase": "~2.2.2",
+    "angularfire": "~1.0.0"
   }
 }

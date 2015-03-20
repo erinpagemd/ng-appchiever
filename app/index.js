@@ -5,8 +5,8 @@
 //     Firebase = require('firebase');
 
 angular
-.module('appchiever', ['ui.router'])
-.constant('BASE_URL', 'https://appchiever.firebaseio.com/')
+.module('appchiever', ['ui.router', 'firebase'])
+.constant('BASE_URL', 'https://appchiever.firebaseio.com')
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 

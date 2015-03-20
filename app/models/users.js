@@ -2,7 +2,7 @@ angular
 .module('appchiever')
 .factory('AuthFactory', AuthFactory)
 
-function AuthFactory(BASE_URL) {
+function AuthFactory (BASE_URL) {
   return {
     register: function (loginObj, cb) {
       var fb = new Firebase(BASE_URL);
