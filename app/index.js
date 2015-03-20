@@ -6,7 +6,7 @@
 
 angular
 .module('tempApp', ['ui.router'])
-.constant('BASE_URL', 'https://temp-app.firebaseio.com')
+.constant('BASE_URL', 'https://appchiever.firebaseio.com/')
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 
