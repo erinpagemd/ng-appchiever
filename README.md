@@ -105,7 +105,10 @@ user  - profile
 * do i use a service for a constructor in angular
 * display based on login
 * clean up controller functions
-* creating user also logs in user
+* dry principle in login.js
+* ng-hide and show in login.jade, login.js
+* logout button does something
+* button on home.jade does something
 
 ## To Use:
 
