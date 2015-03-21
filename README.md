@@ -100,11 +100,10 @@ user  - profile
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
-* dry principle in login.js
 * ng-hide and show in login.jade, login.js
-* logout button does something
-* button on home.jade does something
-* fb as a constant
+* logout button does logs out of firebase
+* button on home.jade redirects to login
+* profile adds to logged in user
 
 ## To Use:
 
