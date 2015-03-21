@@ -26,3 +26,14 @@
         input#picurl-profile.form-control(ng-model='user.picurl' placeholder='picture url')
       .form-group
         button.btn.btn-info(ng-click='save()') Submit
+
+    .row
+      .col-md-6
+        img.img-responsive.img-circle(src='{{user.picurl}}')
+        h2 {{user.firstname + ' ' + user.lastname | uppercase}}
+      .col-md-6
+        h3 {{user.schoolname}}
+        h3 {{user.schoolmascot}}
+        h3 {{user.gradyear}}
+        h3 {{user.gradcity}}
+        h3 {{user.gradstate}}
