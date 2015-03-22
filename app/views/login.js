@@ -8,7 +8,7 @@ angular
     console.log('user logged in with authData: ' + authData);
     if (authData) {
       $scope.loggedin = true;
-      $scope.registered = false;
+      $scope.registering = false;
     } else {
       console.log('not logged in');
     }
@@ -18,6 +18,7 @@ angular
     AuthFactory.$createUser($scope.user)
     .then(function(userData){
       console.log("user created with uid: " + userData.uid);
+      $scope.authUser();
     }).catch(function(error){
       console.log("error creating user: " + error);
     });
@@ -39,7 +40,7 @@ angular
   }
 
   $scope.showRegister = function () {
-    $scope.registered = true;
+    $scope.registering = true;
   }
 
 });
