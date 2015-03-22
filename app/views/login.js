@@ -18,6 +18,15 @@ angular
     });
   }
 
+  $scope.authUser = function () {
+    AuthFactory.$authWithPassword($scope.user)
+    .then(function(authData){
+      console.log("logged in as: ", authData.uid);
+    }).catch(function(error){
+      console.log('Authentication failed: ' + error)
+    });
+  }
+
   $scope.unauthUser = function () {
     AuthFactory.$unauth();
     console.log('unauth')
