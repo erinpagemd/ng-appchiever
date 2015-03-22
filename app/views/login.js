@@ -43,4 +43,8 @@ angular
     $scope.registering = true;
   }
 
+  $scope.cancelRegister = function () {
+    $scope.registering = false;
+  }
+
 });
