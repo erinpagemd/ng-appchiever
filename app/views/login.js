@@ -21,6 +21,9 @@ angular
       $scope.authUser();
     }).catch(function(error){
       console.log("error creating user: " + error);
+      if (error.code === 'EMAIL_TAKEN') {
+        $scope.authUser();
+      }
     });
   }
 
