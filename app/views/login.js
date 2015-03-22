@@ -6,6 +6,7 @@ angular
   $scope.auth.$onAuth(function(authData){
     $scope.authData = authData;
     console.log('user logged in with authData: ' + authData);
+    $scope.loggedin = true;
   })
 
   $scope.createUser = function () {

@@ -104,7 +104,7 @@ user  - profile
 * logout button does logs out of firebase
 * button on home.jade redirects to login
 * profile adds to logged in user
-* onAuth vs getAuth. onAuth does not seem to be working currently
+* login user when create user
 
 ## To Use:
 
