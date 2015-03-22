@@ -38,4 +38,8 @@ angular
     $scope.loggedin = false;
   }
 
+  $scope.showRegister = function () {
+    $scope.registered = true;
+  }
+
 });
