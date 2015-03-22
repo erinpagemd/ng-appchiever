@@ -100,11 +100,11 @@ user  - profile
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
-* ng-hide and show in login.jade, login.js
-* logout button does logs out of firebase
 * button on home.jade redirects to login
 * profile adds to logged in user
-* login user when create user
+* once logged in, routes to profile page
+* how to use logged in status on other views?
+* confirm password matches to show register button
 
 ## To Use:
 
