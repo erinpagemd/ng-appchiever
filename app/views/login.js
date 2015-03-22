@@ -6,13 +6,17 @@ angular
   $scope.auth.$onAuth(function(authData){
     $scope.authData = authData;
     console.log('user logged in with authData: ' + authData);
-    $scope.loggedin = true;
+    if (authData) {
+      $scope.loggedin = true;
+      $scope.registered = false;
+    } else {
+      console.log('not logged in');
+    }
   })
 
   $scope.createUser = function () {
     AuthFactory.$createUser($scope.user)
     .then(function(userData){
-      console.log(AuthFactory);
       console.log("user created with uid: " + userData.uid);
     }).catch(function(error){
       console.log("error creating user: " + error);
@@ -30,7 +34,8 @@ angular
 
   $scope.unauthUser = function () {
     AuthFactory.$unauth();
-    console.log('unauth')
+    console.log('unauth');
+    $scope.loggedin = false;
   }
 
 });
