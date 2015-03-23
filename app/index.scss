@@ -4,6 +4,20 @@ h1 {
   color: blue;
 }
 
+
+///////////////////////////////PROFILE VIEW///////////////////////////////////
+
+.summary-section {
+  table td, table th {
+    text-align: center;
+  }
+
+  tr {
+    border: 2px solid black;
+    margin: 1%;
+  }
+}
+
 ///////////////////////////////HOME VIEW///////////////////////////////////
 
 .h3-home {

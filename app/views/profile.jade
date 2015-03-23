@@ -51,11 +51,27 @@
       .form-group
         input.form-control(ng-model='class.name' placeholder='class name')
       .form-group
-        input.form-control(ng-model='class.level' placeholder='senior junior sophomore freshman')
+        label Class Year
+        select(ng-model='class.level')
+          option(value='Freshman' selected) Freshman
+          option(value='Sophomore') Sophomore
+          option(value='Junior') Junior
+          option(value='Senior') Senior
       .form-group
-        input.form-control(ng-model='class.grade' placeholder='gpa')
+        label Grade
+        select(ng-model='class.grade')
+          option(value='A') 90-100+
+          option(value='B') 80-89
+          option(value='C') 70-79
+          option(value='F') <69
       .form-group
-        input.form-control(ng-model='class.hours' placeholder='credit hours')
+        label Class Credits
+        select(ng-model='class.hours')
+          option(value='1') 1
+          option(value='2') 2
+          option(value='3') 3
+          option(value='4') 4
+          option(value='5') 5
       .form-group
         button.btn.btn-default(ng-click='addClass()') Submit
   .row
@@ -64,22 +80,41 @@
       .form-group
         input.form-control(ng-model='activity.name' placeholder='activity name')
       .form-group
-        input.form-control(ng-model='activity.level' placeholder='senior junior sophomore freshman')
+        label Activity Type
+        select(ng-model='activity.type')
+          option(value='Band' selected) Band
+          option(value='Honor roll') Honor Roll
+          option(value='Intern') Internship
+          option(value='Co-op') Co-op
+          option(value='Volunteer') Volunteer
+          option(value='Society') Society
+          option(value='Award') Award
+          option(value='Theatre') Theatre
+          option(value='Sports') Sports
+          option(value='Club') Club
+          otpion(value='SGA') Student Government
+          option(value='ROTC') ROTC
+          option(value='Competitions') Competitions
       .form-group
-        input.form-control(ng-model='activity.type' placeholder='sports band etc')
+        label Class Year
+        select(ng-model='activity.level')
+          option(value='Freshman' selected) Freshman
+          option(value='Sophomore') Sophomore
+          option(value='Junior') Junior
+          option(value='Senior') Senior
       .form-group
         button.btn-btn-default(ng-click='addActivity()') Submit
   
-  .row
+  .row.summary-section
     .col-md-6
       .container
         table
-          theader
-            td Class
-            td Level
-            td GPA
-            td Credit Hours
-            td Remove
+          thead
+            th Class
+            th Level
+            th Grade
+            th Credit Hours
+            th Remove
           tbody
             tr(ng-repeat='class in classes')
               td {{class.name}} 
@@ -91,11 +126,11 @@
     .col-md-6
       .container
         table
-          theader
-            td Activity
-            td Level
-            td Activity Type
-            td Remove
+          thead
+            th Activity
+            th Level
+            th Activity Type
+            th Remove
           tbody
             tr(ng-repeat='activity in activities')
               td {{activity.name}} 
@@ -103,15 +138,4 @@
               td {{activity.type}}
               td: button.btn.btn-warning X
           
-    .row
-      .container
-        h1 Colleges I am interested in
-        p Search Colleges
-        form
-          input.form-control(ng-model='college.search' placeholder='college name')
-          button.btn.btn-default(ng-click='getColleges') Find Colleges
-    
-    .row
-      .container
-        h1 Occupations I am interested in
       
