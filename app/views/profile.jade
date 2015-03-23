@@ -106,6 +106,10 @@
     .row
       .container
         h1 Colleges I am interested in
+        p Search Colleges
+        form
+          input.form-control(ng-model='college.search' placeholder='college name')
+          button.btn.btn-default(ng-click='getColleges') Find Colleges
     
     .row
       .container

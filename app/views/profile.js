@@ -2,7 +2,9 @@ angular
 .module('appchiever')
 .controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, CollegeFactory, $rootScope) {
 
-  console.log(CollegeFactory());
+  $scope.colleges = CollegeFactory($scope.college.search);
+
+  console.log(CollegeFactory);
 
   $scope.classes = ClassFactory;
 

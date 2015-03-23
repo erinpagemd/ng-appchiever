@@ -17,13 +17,4 @@ angular
   var classArray = $firebaseArray(classesfb);
 
   return classArray;
-})
-.factory('CollegeFactory', function($http) {
-
-  function getColleges () {
-    var url = '/../assets/collegesIPEDS.json';
-    return $http.get(url);
-  }
-
-  return getColleges;
 });
