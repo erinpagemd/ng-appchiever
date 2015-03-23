@@ -3,6 +3,13 @@ angular
 .controller('LoginCtrl', function ($scope, AuthFactory, BASE_URL, $rootScope) {
   $scope.auth = AuthFactory;
 
+  $rootScope.auth.$onAuth(function(authData){
+    if(authData){
+      $scope.loggedin = true;
+      $scope.registering = false;
+    }
+  });
+
   $scope.createUser = function () {
     AuthFactory.$createUser($scope.user)
     .then(function(userData){
@@ -28,6 +35,8 @@ angular
   $scope.unauthUser = function () {
     AuthFactory.$unauth();
     console.log('unauth');
+    $rootScope.profile = null;
+    $rootScope.usersfb = null;
     $scope.loggedin = false;
   }
 
