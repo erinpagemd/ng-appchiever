@@ -71,9 +71,13 @@
         button.btn-btn-default(ng-click='addActivity()') Submit
   
   .row
-    .col-md-6(ng-repeat='class in classes')
-      p {{class.name}} {{class.level}} {{class.grade}} {{class.hours}}
+    .col-md-6
+      .container(ng-repeat='class in classes')
+        p {{class.name}} {{class.level}} {{class.grade}} {{class.hours}}
+          button.btn.btn-warning X
     
-    .col-md-6(ng-repeat='activity in activities')
-      p {{activity.name}} {{activity.level}} {{activity.type}}
+    .col-md-6
+      .container(ng-repeat='activity in activities')
+        p {{activity.name}} {{activity.level}} {{activity.type}}
+          button.btn.btn-warning X
       
