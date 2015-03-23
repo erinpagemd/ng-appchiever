@@ -1,8 +1,8 @@
 angular
 .module('appchiever')
-.factory('ProfileFactory', function($firebaseArray, BASE_URL) {
-  var usersfb = new Firebase(BASE_URL + '/users');
-  var fbArray = $firebaseArray(usersfb);
+.factory('ProfileFactory', function($firebaseArray, BASE_URL, $rootScope) {
+  var profilefb = $rootScope.usersfb.child('profile')
+  var fbArray = $firebaseArray(profilefb);
 
   return fbArray;
 });

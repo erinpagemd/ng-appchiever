@@ -1,6 +1,8 @@
 angular
 .module('appchiever')
-.controller('ProfileCtrl', function ($scope, ProfileFactory) {
+.controller('ProfileCtrl', function ($scope, ProfileFactory, $rootScope) {
+
+  console.log($rootScope.usersfb);
 
   //add ProfileFactory to the scope
   $scope.user = ProfileFactory;

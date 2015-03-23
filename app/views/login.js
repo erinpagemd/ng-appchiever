@@ -1,12 +1,15 @@
 angular
 .module('appchiever')
-.controller('LoginCtrl', function ($scope, AuthFactory) {
+.controller('LoginCtrl', function ($scope, AuthFactory, BASE_URL, $rootScope) {
   $scope.auth = AuthFactory;
 
   $scope.auth.$onAuth(function(authData){
     $scope.authData = authData;
     console.log('user logged in with authData: ' + authData);
     if (authData) {
+      var fb = new Firebase(BASE_URL);
+      $rootScope.usersfb = fb.child('users').child(authData.uid);
+      console.log(authData.uid)
       $scope.loggedin = true;
       $scope.registering = false;
     } else {

@@ -20,5 +20,6 @@
         button.btn.btn-info.btn-lg(ng-show='!loggedin && !registering' ng-click='authUser()') Login
         button.btn.btn-default.btn-lg(ng-show='!loggedin && registering' ng-click='createUser()') Register
         button.btn.btn-default.btn-lg(ng-show='loggedin' ng-click='unauthUser()') Logout
-        a(ng-show='!loggedin && !registering' ng-click='showRegister()' href='') Not a current user? Sign up here.
+        p(ng-show='!loggedin && !registering') Not a current user? Sign up 
+          a(ng-click='showRegister()' href='') here.
         a(ng-show='!loggedin && registering' ng-click='cancelRegister()' href='') Cancel and login
