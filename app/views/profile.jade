@@ -49,25 +49,31 @@
     h1 Add Class 
     form.row.main-form
       .form-group
-        input.form-control(placeholder='class name')
+        input.form-control(ng-model='class.name' placeholder='class name')
       .form-group
-        input.form-control(placeholder='senior junior sophomore freshman')
+        input.form-control(ng-model='class.level' placeholder='senior junior sophomore freshman')
       .form-group
-        input.form-control(placeholder='gpa')
+        input.form-control(ng-model='class.grade' placeholder='gpa')
       .form-group
-        input.form-control(placeholder='credit hours')
+        input.form-control(ng-model='class.hours' placeholder='credit hours')
       .form-group
         button.btn.btn-default Submit
   .row
     h1 Add Activity
     form.row.main-form
       .form-group
-        input.form-control(placeholder='activity name')
+        input.form-control(ng-model='activity.name' placeholder='activity name')
       .form-group
-        input.form-control(placeholder='senior junior sophomore freshman')
+        input.form-control(ng-model='activity.level' placeholder='senior junior sophomore freshman')
       .form-group
-        input.form-control(placeholder='sports band etc')
+        input.form-control(ng-model='activity.type' placeholder='sports band etc')
       .form-group
-        button.btn-btn-default Submit
-
+        button.btn-btn-default(ng-click='addActivity()') Submit
+  
+  .row
+    .col-md-6(ng-repeat='class in classes')
+      p {{class.name}} {{class.level}} {{class.grade}} {{class.hours}}
+    
+    .col-md-6(ng-repeat='activity in activities')
+      p {{activity.name}} {{activity.level}} {{activity.type}}
       

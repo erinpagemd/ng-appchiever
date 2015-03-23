@@ -27,7 +27,6 @@ angular
         var key = Object.keys(data.val().profile)[0]
         var profile = data.val().profile[key];
         $rootScope.profile = profile;
-        console.log('run');
       })
     }
   })
