@@ -101,10 +101,10 @@ user  - profile
 * deploy script
 * autoprefixer? Something for IE support
 * button on home.jade redirects to login
-* profile adds to logged in user
 * once logged in, routes to profile page
 * how to use logged in status on other views?
 * confirm password matches to show register button
+* must go through login page to set usersfb on rootscope
 
 ## To Use:
 

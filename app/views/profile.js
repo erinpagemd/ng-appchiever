@@ -2,10 +2,14 @@ angular
 .module('appchiever')
 .controller('ProfileCtrl', function ($scope, ProfileFactory, $rootScope) {
 
-  console.log($rootScope.usersfb);
+  $rootScope.$watch('profile', function(val){
+    console.log('profile changed', val);
+    $scope.user = val;
+  })
 
-  //add ProfileFactory to the scope
-  $scope.user = ProfileFactory;
+
+  console.log('profile');
+
 
   //save the profile in firebase
   $scope.save = function () {
