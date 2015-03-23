@@ -1,6 +1,8 @@
 angular
 .module('appchiever')
-.controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
+.controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, CollegeFactory, $rootScope) {
+
+  console.log(CollegeFactory());
 
   $scope.classes = ClassFactory;
 

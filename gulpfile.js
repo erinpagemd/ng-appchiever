@@ -22,7 +22,7 @@ gulp.task('sass', function () {
 });
 //////////COPY////////////////////////////////////
 gulp.task('copy', function () {
-  gulp.src(['./app/**/*.js', './app/**/*.jpg', './app/**/*.jpeg', './app/**/*.png', './app/**/*.gif', './app/**/*.mp4'])
+  gulp.src(['./app/**/*.js', './app/**/*.jpg', './app/**/*.jpeg', './app/**/*.png', './app/**/*.gif', './app/**/*.mp4', './app/**/*.json'])
   .pipe(copy('./public/', {prefix:1}))
 });
 //////////JADE////////////////////////////////////
