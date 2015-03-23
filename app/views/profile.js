@@ -1,11 +1,17 @@
 angular
 .module('appchiever')
-.controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, $rootScope) {
+.controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
+
+  $scope.classes = ClassFactory;
+
+  $scope.addClass = function() {
+    $scope.classes.$add($scope.class);
+  }
+
+  $scope.activities = ActivityFactory;
 
   $scope.addActivity = function() {
-    $scope.activity = null;
-    $scope.activity = ActivityFactory;
-    $scope.activity.$add($scope.activity);
+    $scope.activities.$add($scope.activity);
   }
 
   //add ProfileFactory to the scope

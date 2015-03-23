@@ -11,4 +11,10 @@ angular
   var activityArray = $firebaseArray(activitiesfb);
 
   return activityArray;
+})
+.factory('ClassFactory', function($firebaseArray, BASE_URL, $rootScope) {
+  var classesfb = $rootScope.usersfb.child('classes');
+  var classArray = $firebaseArray(classesfb);
+
+  return classArray;
 });
