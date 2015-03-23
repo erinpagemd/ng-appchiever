@@ -15,7 +15,7 @@ angular
   }
 
   //add ProfileFactory to the scope
-  $scope.user = ProfileFactory;
+  $scope.users= ProfileFactory;
 
   $rootScope.$watch('profile', function(val){
     console.log('profile changed', val);
@@ -24,7 +24,7 @@ angular
 
   //save the profile in firebase
   $scope.save = function () {
-    $scope.user.$add($scope.user);
+    $scope.users.$add($scope.user);
   };
 
 });

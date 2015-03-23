@@ -72,18 +72,42 @@
   
   .row
     .col-md-6
-      .container(ng-repeat='class in classes')
-        p {{class.name}} {{class.level}} {{class.grade}} {{class.hours}}
-          button.btn.btn-warning X
+      .container
+        table
+          theader
+            td Class
+            td Level
+            td GPA
+            td Credit Hours
+            td Remove
+          tbody
+            tr(ng-repeat='class in classes')
+              td {{class.name}} 
+              td {{class.level}} 
+              td {{class.grade}} 
+              td {{class.hours}}
+              td: button.btn.btn-warning X
     
     .col-md-6
-      .container(ng-repeat='activity in activities')
-        p {{activity.name}} {{activity.level}} {{activity.type}}
-          button.btn.btn-warning X
+      .container
+        table
+          theader
+            td Activity
+            td Level
+            td Activity Type
+            td Remove
+          tbody
+            tr(ng-repeat='activity in activities')
+              td {{activity.name}} 
+              td {{activity.level}} 
+              td {{activity.type}}
+              td: button.btn.btn-warning X
           
     .row
-      h1 Colleges I am interested in
+      .container
+        h1 Colleges I am interested in
     
     .row
-      h1 Occupations I am interested in
+      .container
+        h1 Occupations I am interested in
       
