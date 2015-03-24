@@ -1,118 +1,139 @@
 .container
-  .row
-    h1 Create Profile  
-    form.row.main-form
-      .form-group
-        label(for='firstname-profile') First Name
-        input#firstname-profile.form-control(ng-model='user.firstname' placeholder='first name')
-      .form-group
-        label(for='lastname-profile') Last Name
-        input#lastname-profile.form-control(ng-model='user.lastname' placeholder='last name')
-      .form-group
-        label(for='schoolname-profile') School Name
-        input#schoolname-profile.form-control(ng-model='user.schoolname' placeholder='school name')
-      .form-group
-        label(for='schoolmascot-profile') School Mascot
-        input#schoolmascot-profile.form-control(ng-model='user.schoolmascot' placeholder='school mascot')
-      .form-group
-        label(for='gradyear-profile') Graduation Year
-        input#gradyear-profile.form-control(ng-model='user.gradyear' placeholder='graduation year')
-      .form-group
-        label(for='gradcity-profile') City
-        input#gradcity-profile.form-control(ng-model='user.gradcity' placeholder='city')
-      .form-group
-        label(for='gradstate-profile') State
-        input#gradstate-profile.form-control(ng-model='user.gradstate' placeholder='state')
-      .form-group
-        label(for='picurl-profile') Picture URL
-        input#picurl-profile.form-control(ng-model='user.picurl' placeholder='picture url')
-      .form-group
-        button.btn.btn-info(ng-click='save()') Submit
+  .row    
+    #profileModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='profileModalLabel' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h1 Create Profile  
+          .modal-body
+            form.row.main-form
+              .form-group
+                label(for='firstname-profile') First Name
+                input#firstname-profile.form-control(ng-model='user.firstname' placeholder='first name')
+              .form-group
+                label(for='lastname-profile') Last Name
+                input#lastname-profile.form-control(ng-model='user.lastname' placeholder='last name')
+              .form-group
+                label(for='schoolname-profile') School Name
+                input#schoolname-profile.form-control(ng-model='user.schoolname' placeholder='school name')
+              .form-group
+                label(for='schoolmascot-profile') School Mascot
+                input#schoolmascot-profile.form-control(ng-model='user.schoolmascot' placeholder='school mascot')
+              .form-group
+                label(for='gradyear-profile') Graduation Year
+                input#gradyear-profile.form-control(ng-model='user.gradyear' placeholder='graduation year')
+              .form-group
+                label(for='gradcity-profile') City
+                input#gradcity-profile.form-control(ng-model='user.gradcity' placeholder='city')
+              .form-group
+                label(for='gradstate-profile') State
+                input#gradstate-profile.form-control(ng-model='user.gradstate' placeholder='state')
+              .form-group
+                label(for='picurl-profile') Picture URL
+                input#picurl-profile.form-control(ng-model='user.picurl' placeholder='picture url')
+            .modal-footer
+              button.btn.btn-default(data-dismiss='modal') Close
+              button.btn.btn-info(ng-click='save()' data-dismiss='modal') Submit
 
   .row
     .col-md-6
       img.img-responsive.img-circle(src='{{user.picurl}}')
-      h2 {{user.firstname + ' ' + user.lastname | uppercase}}
     .col-md-6
-      h3 {{user.schoolname}}
-      h3 {{user.schoolmascot}}
-      h3 {{user.gradyear}}
-      h3 {{user.gradcity}}
-      h3 {{user.gradstate}}
+      h2 {{user.firstname + ' ' + user.lastname | uppercase}}
+      h3 {{user.gradcity}}, {{user.gradstate}}
+      h3 Student at {{user.schoolname}}
+      h3 Home of the fighting {{user.schoolmascot}}s
+      h3 Class of {{user.gradyear}}
 
   .row
     form.row.main-form
       .form-group
-        button.btn.btn-default Add new class
-        button.btn.btn-default Add new activity
+        button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#classModal') Add new class
+        button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#activityModal') Add new activity
+        button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#profileModal') Add Profile
+
   .row
-    h1 Add Class 
-    form.row.main-form
-      .form-group
-        input.form-control(ng-model='class.name' placeholder='class name')
-      .form-group
-        label Class Year
-        select(ng-model='class.level')
-          option(value='Freshman' selected) Freshman
-          option(value='Sophomore') Sophomore
-          option(value='Junior') Junior
-          option(value='Senior') Senior
-      .form-group
-        label Grade
-        select(ng-model='class.grade')
-          option(value='A') 90-100+
-          option(value='B') 80-89
-          option(value='C') 70-79
-          option(value='F') <69
-      .form-group
-        label Class Credits
-        select(ng-model='class.hours')
-          option(value='1') 1
-          option(value='2') 2
-          option(value='3') 3
-          option(value='4') 4
-          option(value='5') 5
-      .form-group
-        button.btn.btn-default(ng-click='addClass()') Submit
+    #classModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='classModalLabel' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h1 Add Class 
+          .modal-body
+            form.row.main-form
+              .form-group
+                input.form-control(ng-model='class.name' placeholder='class name')
+              .form-group
+                label Class Year
+                select(ng-model='class.level')
+                  option(value='Freshman' selected) Freshman
+                  option(value='Sophomore') Sophomore
+                  option(value='Junior') Junior
+                  option(value='Senior') Senior
+              .form-group
+                label Grade
+                select(ng-model='class.grade')
+                  option(value='A') 90-100+
+                  option(value='B') 80-89
+                  option(value='C') 70-79
+                  option(value='F') <69
+              .form-group
+                label Class Credits
+                select(ng-model='class.hours')
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5            
+            .modal-footer
+              button.btn.btn-default(data-dismiss='modal') Close
+              button.btn.btn-info(ng-click='addClass()' data-dismiss='modal') Submit
+  
   .row
-    h1 Add Activity
-    form.row.main-form
-      .form-group
-        input.form-control(ng-model='activity.name' placeholder='activity name')
-      .form-group
-        label Activity Type
-        select(ng-model='activity.type')
-          option(value='Band' selected) Band
-          option(value='Honor roll') Honor Roll
-          option(value='Intern') Internship
-          option(value='Co-op') Co-op
-          option(value='Volunteer') Volunteer
-          option(value='Society') Society
-          option(value='Award') Award
-          option(value='Theatre') Theatre
-          option(value='Sports') Sports
-          option(value='Club') Club
-          otpion(value='SGA') Student Government
-          option(value='ROTC') ROTC
-          option(value='Competitions') Competitions
-      .form-group
-        label Class Year
-        select(ng-model='activity.level')
-          option(value='Freshman' selected) Freshman
-          option(value='Sophomore') Sophomore
-          option(value='Junior') Junior
-          option(value='Senior') Senior
-      .form-group
-        button.btn-btn-default(ng-click='addActivity()') Submit
+    #activityModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='activityModalLabel' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h1 Add Activity
+          .modal-body
+            form.row.main-form
+              .form-group
+                input.form-control(ng-model='activity.name' placeholder='activity name')
+              .form-group
+                label Activity Type
+                select(ng-model='activity.type')
+                  option(value='Band' selected) Band
+                  option(value='Honor roll') Honor Roll
+                  option(value='Intern') Internship
+                  option(value='Co-op') Co-op
+                  option(value='Volunteer') Volunteer
+                  option(value='Society') Society
+                  option(value='Award') Award
+                  option(value='Theatre') Theatre
+                  option(value='Sports') Sports
+                  option(value='Club') Club
+                  otpion(value='SGA') Student Government
+                  option(value='ROTC') ROTC
+                  option(value='Competitions') Competitions
+              .form-group
+                label Class Year
+                select(ng-model='activity.level')
+                  option(value='Freshman' selected) Freshman
+                  option(value='Sophomore') Sophomore
+                  option(value='Junior') Junior
+                  option(value='Senior') Senior
+          .modal-footer
+            button.btn.btn-default(data-dismiss='modal') Close
+            button.btn-btn-info(ng-click='addActivity()' data-dismiss='modal') Submit
   
   .row.summary-section
+    h1 Senior Year
     .col-md-6
       .container
         table
           thead
             th Class
             th Level
-            th Grade
+            th GPA
             th Credit Hours
             th Remove
           tbody
@@ -121,8 +142,106 @@
               td {{class.level}} 
               td {{class.grade}} 
               td {{class.hours}}
+              td: button.btn.btn-warning X  
+    .col-md-6
+      .container
+        table
+          thead
+            th Activity
+            th Level
+            th Activity Type
+            th Remove
+          tbody
+            tr(ng-repeat='activity in activities')
+              td {{activity.name}} 
+              td {{activity.level}} 
+              td {{activity.type}}
+              td: button.btn.btn-warning X
+          
+  .row.summary-section
+    h1 Junior Year
+    .col-md-6
+      .container
+        table
+          thead
+            th Class
+            th Level
+            th GPA
+            th Credit Hours
+            th Remove
+          tbody
+            tr(ng-repeat='class in classes')
+              td {{class.name}} 
+              td {{class.level}} 
+              td {{class.grade}} 
+              td {{class.hours}}
+              td: button.btn.btn-warning X  
+    .col-md-6
+      .container
+        table
+          thead
+            th Activity
+            th Level
+            th Activity Type
+            th Remove
+          tbody
+            tr(ng-repeat='activity in activities')
+              td {{activity.name}} 
+              td {{activity.level}} 
+              td {{activity.type}}
+              td: button.btn.btn-warning X
+          
+  .row.summary-section
+    h1 Sophomore Year
+    .col-md-6
+      .container
+        table
+          thead
+            th Class
+            th Level
+            th GPA
+            th Credit Hours
+            th Remove
+          tbody
+            tr(ng-repeat='class in classes')
+              td {{class.name}} 
+              td {{class.level}} 
+              td {{class.grade}} 
+              td {{class.hours}}
+              td: button.btn.btn-warning X  
+    .col-md-6
+      .container
+        table
+          thead
+            th Activity
+            th Level
+            th Activity Type
+            th Remove
+          tbody
+            tr(ng-repeat='activity in activities')
+              td {{activity.name}} 
+              td {{activity.level}} 
+              td {{activity.type}}
               td: button.btn.btn-warning X
     
+  .row.summary-section
+    h1 Freshman Year
+    .col-md-6
+      .container
+        table
+          thead
+            th Class
+            th Level
+            th GPA
+            th Credit Hours
+            th Remove
+          tbody
+            tr(ng-repeat='class in classes')
+              td {{class.name}} 
+              td {{class.level}} 
+              td {{class.grade}} 
+              td {{class.hours}}
+              td: button.btn.btn-warning X  
     .col-md-6
       .container
         table
