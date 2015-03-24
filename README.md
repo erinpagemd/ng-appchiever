@@ -28,51 +28,9 @@ As a mother of 2 teenage sons, I know that teenagers love to use apps. My kids a
 
 ```
 
-user  - profile
-                  - array of objects {image: value, name: value, highschool: value, graddate: value, location: value}
-
-      - careers
-                  - array of objects {career: value, description: value}
-
-      - colleges
-                  - array of objects {university: value, url: value, location: value, latlong: value, onlineApp: value}
-
-      - points
-                  - curriculum
-                      - array of objects {className: value, classScore: number}
-                  - activities
-                      - array of objects {activityType: value, activityScore: number}
-
-      - badges
-                  - curriculum
-                      - array of objects {badgeName: value}
-                  - activities
-                      - array of objects {badgeName: value}
-
-      - freshman
-                  - curriculum
-                      - array of objects {className: value, classGrade: floating point number}
-                  - activities
-                      - array of objects {activityName: value, activityType: value}
-
-      - sophomore
-                  - curriculum
-                      - array of objects {className: value, classGrade: floating point number}
-                  - activities
-                      - array of objects {activityName: value, activityType: value}
-
-      - junior
-                  - curriculum
-                      - array of objects {className: value, classGrade: floating point number}
-                  - activities
-                      - array of objects {activityName: value, activityType: value}
-
-      - senior
-                  - curriculum
-                      - array of objects {className: value, classGrade: floating point number}
-                  - activities
-                      - array of objects {activityName: value, activityType: value}
-
+users - simplelogin - user  - activities [{level: 'Freshman', name: 'Soccer Team Captain', type: 'Sports'}]
+                            - classes [{grade: 'B', hours: '3', level: 'Sophomore', name: 'Spanish 1'}]
+                            - profile [{firstname: 'bob', gradcity: 'Nashville', gradstate: 'Year', gradyear: '2016', lastname: 'Smith', picurl: 'someurl', schoolmascot: 'acorn trees', schoolname: 'tree university'}]
 ```
 
 ## Technologies:
@@ -102,9 +60,7 @@ user  - profile
 * autoprefixer? Something for IE support
 * button on home.jade redirects to login
 * once logged in, routes to profile page
-* how to use logged in status on other views?
 * confirm password matches to show register button
-* must go through login page to set usersfb on rootscope
 
 ## To Use:
 
