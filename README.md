@@ -58,7 +58,6 @@ users - simplelogin - user  - activities [{level: 'Freshman', name: 'Soccer Team
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
-* button on home.jade redirects to login
 * once logged in, routes to profile page
 * confirm password matches to show register button
 

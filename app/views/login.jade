@@ -1,0 +1,38 @@
+.container-fluid
+  .row
+    h3.h3-home.col-md-9 don't get caught standing still...
+  .row
+    h2.h2-home.col-md-9 take a step towards your future
+  .row
+    .col-md-9
+      button.btn.btn-success.btn-lg.btn-home(type='button', data-toggle='modal', data-target='#loginModal') Get Started
+  
+  video(loop poster='' autoplay)
+    source(src='assets/timelapse.mp4' type='video/mp4')
+
+.row      
+  #loginModal.modal.fade(tabindex='-1' role='dialog' aria-loballedby='loginModalLabel' aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-body
+          form.row
+            .form-group.username-login(ng-show='!loggedin')
+              label(for='username-login') Email
+              input#username-login.form-control(ng-model='user.email' type='email' placeholder='email')
+            .form-group.password-login(ng-show='!loggedin')
+              label(for='password-login') Password
+              input#password-login.form-control(ng-model='user.password' type='password' placeholder='password')
+            .form-group.confirm-login(ng-show='!loggedin && registering')
+              label(for='confirm-login') Confirm Password
+              input#confirm-login.form-control(ng-model='user.confirm' type='password' placeholder='confirm password')
+          p(ng-show='!loggedin && !registering') Not a current user? Sign up 
+            a(ng-click='showRegister()' href='') here.
+          a(ng-show='!loggedin && registering' ng-click='cancelRegister()' href='') Cancel and login
+
+          .modal-footer  
+            .row.btn-login
+              button.btn.btn-info.btn-lg(ng-show='!loggedin && !registering' ng-click='authUser()' data-dismiss='modal') Login
+              button.btn.btn-primary.btn-lg(ng-show='!loggedin && registering' ng-click='createUser()' data-dismiss='modal') Register
+              button.btn.btn-warning.btn-lg(ng-show='loggedin' ng-click='unauthUser()' data-dismiss='modal') Logout
+              button.btn.btn-default.btn-lg(type='button' data-dismiss='modal') Close 
+              

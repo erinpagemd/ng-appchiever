@@ -1,6 +1,7 @@
 angular
 .module('appchiever')
 .controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
+  $scope.hovering = false;
 
   $scope.classes = ClassFactory;
 
