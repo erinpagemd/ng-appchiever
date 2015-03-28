@@ -1,15 +1,16 @@
 angular
 .module('appchiever')
-.controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
+.controller('ProfileCtrl', function ($firebaseObject, $scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
 
-  $scope.editing = false;
+  $scope.update = function(){
+    $scope.edituser.$save($scope.edituser);
 
-  // $scope.showEditProfileForm = function () {
-  //   console.log($scope.editing);
-  //   console.log('clicked')
-  //   $scope.editing = true;
-  //   console.log($scope.editing);
-  // };
+    console.log($scope.editingprofile);
+    $scope.editingprofile = false;
+    console.log($scope.editingprofile);
+  }
+
+  $scope.editingprofile = false;
 
   $scope.hovering = false;
 
@@ -26,16 +27,19 @@ angular
   }
 
   //add ProfileFactory to the scope
-  $scope.users= ProfileFactory;
+  $scope.user = ProfileFactory;
 
   $rootScope.$watch('profile', function(val){
     console.log('profile changed', val);
     $scope.user = val;
+    console.log('profilefb' + $rootScope.profilefb);
+    $scope.edituser = $firebaseObject($rootScope.profilefb);
+    console.log('edituser' + $scope.edituser)
   })
 
   //save the profile in firebase
   $scope.save = function () {
-    $scope.users.$add($scope.user);
+    ProfileFactory.$add($scope.user);
   };
 
 });

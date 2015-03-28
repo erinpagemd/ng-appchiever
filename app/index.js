@@ -16,14 +16,16 @@ angular
 })
 .run(function($rootScope, AuthFactory, BASE_URL){
   $rootScope.auth = AuthFactory;
-
   $rootScope.auth.$onAuth(function(authData){
     $rootScope.authData = authData;
     if (authData) {
       var fb = new Firebase(BASE_URL);
       $rootScope.usersfb = fb.child('users').child(authData.uid);
+      console.log(authData.uid);
       $rootScope.usersfb.on('value', function(data){
         var key = Object.keys(data.val().profile)[0]
+        var profilefb = $rootScope.usersfb.child('profile').child(key);
+        $rootScope.profilefb = profilefb;
         var profile = data.val().profile[key];
         $rootScope.profile = profile;
       })

@@ -1,52 +1,54 @@
 .col-md-12
   .col-md-9
-    .row.main-profile.main-form(ng-mouseover='$scope.hovering.profile=true' ng-mouseleave='$scope.hovering=false')
+    .row.main-profile.main-form(ng-hide='editingprofile' ng-mouseover='hovering.profile=true' ng-mouseleave='hovering=false')
       .col-md-6
-        button(ng-show='$scope.hovering.profile' ng-click='$scope.editing=true').btn.btn-default: i.fa.fa-pencil
+        button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
         img.img-responsive.img-circle(src='{{user.picurl}}')
 
       .col-md-6
         .row
           h2 {{user.firstname + ' ' + user.lastname | uppercase}}
-            button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+            button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
         .row          
           h3 Class of {{user.gradyear}}
-            button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+            button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
         .row
           h3 Student at {{user.schoolname}}
-            button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+            button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
         .row
-          p Home of the fighting {{user.schoolmascot}}s
-            button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+          p Home of the fighting {{user.schoolmascot}}
+            button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
         .row
           p {{user.gradcity}}, {{user.gradstate}}
-            button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+            button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
             
-    form.row.main-form.edit-profile-form(ng-show='$scope.editing')
+    form.row.main-form.edit-profile-form(ng-show='editingprofile')
       .form-group
         label(for='edit-firstname-profile') First Name
-        input#edit-firstname-profile.form-control(ng-model='user.firstname' placeholder='first name')
+        input#edit-firstname-profile.form-control(ng-model='edituser.firstname' placeholder='first name')
       .form-group
         label(for='edit-lastname-profile') Last Name
-        input#edit-lastname-profile.form-control(ng-model='user.lastname' placeholder='last name')
+        input#edit-lastname-profile.form-control(ng-model='edituser.lastname' placeholder='last name')
       .form-group
         label(for='edit-schoolname-profile') School Name
-        input#edit-schoolname-profile.form-control(ng-model='user.schoolname' placeholder='school name')
+        input#edit-schoolname-profile.form-control(ng-model='edituser.schoolname' placeholder='school name')
       .form-group
         label(for='edit-schoolmascot-profile') School Mascot
-        input#edit-schoolmascot-profile.form-control(ng-model='user.schoolmascot' placeholder='school mascot')
+        input#edit-schoolmascot-profile.form-control(ng-model='edituser.schoolmascot' placeholder='school mascot')
       .form-group
         label(for='edit-gradyear-profile') Graduation Year
-        input#edit-gradyear-profile.form-control(ng-model='user.gradyear' placeholder='graduation year')
+        input#edit-gradyear-profile.form-control(ng-model='edituser.gradyear' placeholder='graduation year')
       .form-group
         label(for='edit-gradcity-profile') City
-        input#edit-gradcity-profile.form-control(ng-model='user.gradcity' placeholder='city')
+        input#edit-gradcity-profile.form-control(ng-model='edituser.gradcity' placeholder='city')
       .form-group
         label(for='edit-gradstate-profile') State
-        input#edit-gradstate-profile.form-control(ng-model='user.gradstate' placeholder='state')
+        input#edit-gradstate-profile.form-control(ng-model='edituser.gradstate' placeholder='state')
       .form-group
         label(for='edit-picurl-profile') Picture URL
-        input#edit-picurl-profile.form-control(ng-model='user.picurl' placeholder='picture url')
+        input#edit-picurl-profile.form-control(ng-model='edituser.picurl' placeholder='picture url')
+      .form-group
+        button.btn.btn-default(ng-click='update()') Finished Editing
 
     .row.summary-section.main-form
       h1 Senior Year
@@ -250,7 +252,7 @@
         .form-group
           button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#activityModal') Add new activity
         .form-group
-          button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#profileModal') Add Profile
+          button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#profileModal') Create Profile
       h1 Points
       h1 Badges
       h1 GPA
