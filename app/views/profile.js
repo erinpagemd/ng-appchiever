@@ -1,6 +1,16 @@
 angular
 .module('appchiever')
 .controller('ProfileCtrl', function ($scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
+
+  $scope.editing = false;
+
+  // $scope.showEditProfileForm = function () {
+  //   console.log($scope.editing);
+  //   console.log('clicked')
+  //   $scope.editing = true;
+  //   console.log($scope.editing);
+  // };
+
   $scope.hovering = false;
 
   $scope.classes = ClassFactory;

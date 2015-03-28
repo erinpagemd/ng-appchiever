@@ -2,7 +2,7 @@
   .col-md-9
     .row.main-profile.main-form(ng-mouseover='$scope.hovering.profile=true' ng-mouseleave='$scope.hovering=false')
       .col-md-6
-        button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+        button(ng-show='$scope.hovering.profile' ng-click='$scope.editing=true').btn.btn-default: i.fa.fa-pencil
         img.img-responsive.img-circle(src='{{user.picurl}}')
 
       .col-md-6
@@ -21,6 +21,32 @@
         .row
           p {{user.gradcity}}, {{user.gradstate}}
             button(ng-show='$scope.hovering.profile').btn.btn-default: i.fa.fa-pencil
+            
+    form.row.main-form.edit-profile-form(ng-show='$scope.editing')
+      .form-group
+        label(for='edit-firstname-profile') First Name
+        input#edit-firstname-profile.form-control(ng-model='user.firstname' placeholder='first name')
+      .form-group
+        label(for='edit-lastname-profile') Last Name
+        input#edit-lastname-profile.form-control(ng-model='user.lastname' placeholder='last name')
+      .form-group
+        label(for='edit-schoolname-profile') School Name
+        input#edit-schoolname-profile.form-control(ng-model='user.schoolname' placeholder='school name')
+      .form-group
+        label(for='edit-schoolmascot-profile') School Mascot
+        input#edit-schoolmascot-profile.form-control(ng-model='user.schoolmascot' placeholder='school mascot')
+      .form-group
+        label(for='edit-gradyear-profile') Graduation Year
+        input#edit-gradyear-profile.form-control(ng-model='user.gradyear' placeholder='graduation year')
+      .form-group
+        label(for='edit-gradcity-profile') City
+        input#edit-gradcity-profile.form-control(ng-model='user.gradcity' placeholder='city')
+      .form-group
+        label(for='edit-gradstate-profile') State
+        input#edit-gradstate-profile.form-control(ng-model='user.gradstate' placeholder='state')
+      .form-group
+        label(for='edit-picurl-profile') Picture URL
+        input#edit-picurl-profile.form-control(ng-model='user.picurl' placeholder='picture url')
 
     .row.summary-section.main-form
       h1 Senior Year
@@ -215,8 +241,6 @@
               button.btn.btn-default(data-dismiss='modal') Close
               button.btn-btn-info(ng-click='addActivity()' data-dismiss='modal') Submit
     
-
-
   
   .col-md-3.col-right-profile
     .row
