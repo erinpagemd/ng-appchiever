@@ -1,6 +1,6 @@
 .col-md-12
   .col-md-9
-    .row.main-profile.main-form(ng-hide='editingprofile' ng-mouseover='hovering.profile=true' ng-mouseleave='hovering=false')
+    .row.main-profile.main-form(ng-hide='editingprofile' ng-mouseover='hovering.profile=true' ng-mouseleave='hovering.profile=false')
       .col-md-6
         button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
         img.img-responsive.img-circle(src='{{user.picurl}}')
@@ -50,15 +50,17 @@
       .form-group
         button.btn.btn-default(ng-click='update()') Finished Editing
 
-    .row.summary-section.main-form
+    .row.summary-section.main-form(ng-mouseover='hovering.senior=true' ng-mouseleave='hovering.senior=false')
       h1 Senior Year
       h2 Classes
       .container
         .row(ng-repeat='class in classes | filter: "Senior"')
           .col-md-4
             p {{class.name}} 
+              button(ng-show='hovering.senior').btn.btn-default: i.fa.fa-pencil
           .col-md-4
             p {{class.grade}} 
+              button(ng-show='hovering.senior').btn.btn-default: i.fa.fa-pencil
           .col-md-4
             button.btn.btn-warning X  
       h2 Activities
@@ -66,8 +68,10 @@
         .row(ng-repeat='activity in activities | filter: "Senior"')
           .col-md-4
             p {{activity.name}} 
+              button(ng-show='hovering.senior').btn.btn-default: i.fa.fa-pencil
           .col-md-4
             p {{activity.type}}
+              button(ng-show='hovering.senior').btn.btn-default: i.fa.fa-pencil
           .col-md-4
             button.btn.btn-warning X
           
