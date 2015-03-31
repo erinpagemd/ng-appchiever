@@ -2,16 +2,16 @@ angular
 .module('appchiever')
 .controller('ProfileCtrl', function ($firebaseObject, $scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
 
-  $scope.delete = function(){
-    //delete the record
+  $scope.deleteClass = function(id){
+    console.log(id);
+    var classfb = $rootScope.usersfb.child('classes').child(id);
+    var classobj = $firebaseObject(classfb);
+    classobj.$remove();
   }
 
   $scope.update = function(){
     $scope.edituser.$save($scope.edituser);
-
-    console.log($scope.editingprofile);
     $scope.editingprofile = false;
-    console.log($scope.editingprofile);
   }
 
   $scope.editingprofile = false;
@@ -38,11 +38,8 @@ angular
   $scope.user = ProfileFactory;
 
   $rootScope.$watch('profile', function(val){
-    console.log('profile changed', val);
     $scope.user = val;
-    console.log('profilefb' + $rootScope.profilefb);
     $scope.edituser = $firebaseObject($rootScope.profilefb);
-    console.log('edituser' + $scope.edituser)
   })
 
   //save the profile in firebase

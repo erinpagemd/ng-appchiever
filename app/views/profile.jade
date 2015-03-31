@@ -50,7 +50,7 @@
       .form-group
         button.btn.btn-default(ng-click='update()') Finished Editing
 
-    .row.summary-section.main-form(ng-mouseover='hovering.senior=true' ng-mouseleave='hovering.senior=false')
+    .row.summary-section.main-form
       h1 Senior Year
       h2 Classes
       .container
@@ -60,7 +60,7 @@
           .col-md-4
             p {{class.grade}} 
           .col-md-4
-            button.btn.btn-warning(ng-click='delete()') X  
+            button.btn.btn-warning(ng-click='deleteClass(class.$id)') X  
       h2 Activities
       .container
         .row(ng-repeat='activity in activities | filter: "Senior"')
@@ -134,7 +134,7 @@
           .col-md-4
             button.btn.btn-warning X
     
-    include ./views/profile_modals              
+    include profile_modals              
     
   .col-md-3.col-right-profile
     .row
