@@ -1,6 +1,6 @@
 angular
 .module('appchiever')
-.controller('LoginCtrl', function ($scope, AuthFactory, BASE_URL, $rootScope) {
+.controller('LoginCtrl', function ($location, $scope, AuthFactory, BASE_URL, $rootScope) {
   $scope.auth = AuthFactory;
 
   $rootScope.auth.$onAuth(function(authData){
@@ -27,6 +27,7 @@ angular
     AuthFactory.$authWithPassword($scope.user)
     .then(function(authData){
       console.log("logged in as: ", authData.uid);
+      $location.path('/profile')
     }).catch(function(error){
       console.log('Authentication failed: ' + error)
     });
