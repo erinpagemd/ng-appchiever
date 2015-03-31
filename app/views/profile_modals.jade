@@ -1,0 +1,108 @@
+.row    
+  #profileModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='profileModalLabel' aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h1 Create Profile  
+        .modal-body
+          form.row.main-form
+            .form-group
+              label(for='firstname-profile') First Name
+              input#firstname-profile.form-control(ng-model='user.firstname' placeholder='first name')
+            .form-group
+              label(for='lastname-profile') Last Name
+              input#lastname-profile.form-control(ng-model='user.lastname' placeholder='last name')
+            .form-group
+              label(for='schoolname-profile') School Name
+              input#schoolname-profile.form-control(ng-model='user.schoolname' placeholder='school name')
+            .form-group
+              label(for='schoolmascot-profile') School Mascot
+              input#schoolmascot-profile.form-control(ng-model='user.schoolmascot' placeholder='school mascot')
+            .form-group
+              label(for='gradyear-profile') Graduation Year
+              input#gradyear-profile.form-control(ng-model='user.gradyear' placeholder='graduation year')
+            .form-group
+              label(for='gradcity-profile') City
+              input#gradcity-profile.form-control(ng-model='user.gradcity' placeholder='city')
+            .form-group
+              label(for='gradstate-profile') State
+              input#gradstate-profile.form-control(ng-model='user.gradstate' placeholder='state')
+            .form-group
+              label(for='picurl-profile') Picture URL
+              input#picurl-profile.form-control(ng-model='user.picurl' placeholder='picture url')
+          .modal-footer
+            button.btn.btn-default(data-dismiss='modal') Close
+            button.btn.btn-info(ng-click='save()' data-dismiss='modal') Submit
+          
+.row
+  #classModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='classModalLabel' aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h1 Add Class 
+        .modal-body
+          form.row.main-form
+            .form-group
+              input.form-control(ng-model='class.name' placeholder='class name')
+            .form-group
+              label Class Year
+              select(ng-model='class.level')
+                option(value='Freshman' selected) Freshman
+                option(value='Sophomore') Sophomore
+                option(value='Junior') Junior
+                option(value='Senior') Senior
+            .form-group
+              label Grade
+              select(ng-model='class.grade')
+                option(value='A') 90-100+
+                option(value='B') 80-89
+                option(value='C') 70-79
+                option(value='F') <69
+            .form-group
+              label Class Credits
+              select(ng-model='class.hours')
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+                option(value='4') 4
+                option(value='5') 5            
+          .modal-footer
+            button.btn.btn-default(data-dismiss='modal') Close
+            button.btn.btn-info(ng-click='addClass()' data-dismiss='modal') Submit
+
+.row
+  #activityModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='activityModalLabel' aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h1 Add Activity
+        .modal-body
+          form.row.main-form
+            .form-group
+              input.form-control(ng-model='activity.name' placeholder='activity name')
+            .form-group
+              label Activity Type
+              select(ng-model='activity.type')
+                option(value='Band' selected) Band
+                option(value='Honor roll') Honor Roll
+                option(value='Intern') Internship
+                option(value='Co-op') Co-op
+                option(value='Volunteer') Volunteer
+                option(value='Society') Society
+                option(value='Award') Award
+                option(value='Theatre') Theatre
+                option(value='Sports') Sports
+                option(value='Club') Club
+                otpion(value='SGA') Student Government
+                option(value='ROTC') ROTC
+                option(value='Competitions') Competitions
+            .form-group
+              label Class Year
+              select(ng-model='activity.level')
+                option(value='Freshman' selected) Freshman
+                option(value='Sophomore') Sophomore
+                option(value='Junior') Junior
+                option(value='Senior') Senior
+        .modal-footer
+          button.btn.btn-default(data-dismiss='modal') Close
+          button.btn-btn-info(ng-click='addActivity()' data-dismiss='modal') Submit
