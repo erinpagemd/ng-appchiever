@@ -6,19 +6,19 @@
         img.img-responsive.img-circle(src='{{user.picurl}}')
 
       .col-md-6
-        .row
+        .row(ng-show='user.firstname')
           h2 {{user.firstname + ' ' + user.lastname | uppercase}}
             button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
-        .row          
+        .row(ng-show='user.gradyear')          
           h3 Class of {{user.gradyear}}
             button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
-        .row
+        .row(ng-show='user.schoolname')
           h3 Student at {{user.schoolname}}
             button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
-        .row
+        .row(ng-show='user.schoolmascot')
           p Home of the fighting {{user.schoolmascot}}
             button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
-        .row
+        .row(ng-show='user.gradcity')
           p {{user.gradcity}}, {{user.gradstate}}
             button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
             
