@@ -1,0 +1,83 @@
+.row.summary-section.main-form(ng-show='isSeniorClass || isSeniorActivity')
+  h1 Senior Year
+  .container(ng-show='isSeniorClass')
+    h2 Classes
+    .row(ng-repeat='class in classes | filter: "Senior"')
+      .col-md-4
+        p {{class.name}} 
+      .col-md-4
+        p {{class.grade}} 
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteClass(class.$id)') X  
+  .container(ng-show='isSeniorActivity')
+    h2 Activities
+    .row(ng-repeat='activity in activities | filter: "Senior"')
+      .col-md-4
+        p {{activity.name}} 
+      .col-md-4
+        p {{activity.type}}
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteActivity(activity.$id)') X
+      
+.row.summary-section.main-form(ng-show='isJuniorClass || isJuniorActivity')
+  h1 Junior Year
+  .container(ng-show='isJuniorClass')
+    h2 Classes
+    .row(ng-repeat='class in classes | filter: "Junior"')
+      .col-md-4 
+        p {{class.name}} 
+      .col-md-4
+        p {{class.grade}} 
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteClass(class.$id)') X  
+  .container(ng-show='isJuniorActivity')
+    h2 Activities
+    .row(ng-repeat='activity in activities | filter: "Junior"')
+      .col-md-4
+        p {{activity.name}} 
+      .col-md-4
+        p {{activity.type}}
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteActivity(activity.$id)') X
+              
+.row.summary-section.main-form(ng-show='isSophomoreClass || isSophomoreActivity')
+  h1 Sophomore Year
+  .container(ng-show='isSophomoreClass')
+    h2 Classes
+    .row(ng-repeat='class in classes | filter: "Sophomore"')
+      .col-md-4 
+        p {{class.name}} 
+      .col-md-4
+        p {{class.grade}} 
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteClass(class.$id)') X  
+  .container(ng-show='isSophomoreActivity')
+    h2 Activities
+    .row(ng-repeat='activity in activities | filter: "Sophomore"')
+      .col-md-4
+        p {{activity.name}} 
+      .col-md-4
+        p {{activity.type}}
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteActivity(activity.$id)') X
+              
+.row.summary-section.main-form(ng-show='isFreshmanClass || isFreshmanActivity')
+  h1 Freshman Year
+  .container(ng-show='isFreshmanClass')
+    h2 Classes
+    .row(ng-repeat='class in classes | filter: "Freshman"')
+      .col-md-4
+        p {{class.name}} 
+      .col-md-4
+        p {{class.grade}} 
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteClass(class.$id)') X  
+  .container(ng-show='isFreshmanActivity')
+    h2 Activities
+    .row(ng-repeat='activity in activities | filter: "Freshman"')
+      .col-md-4
+        p {{activity.name}} 
+      .col-md-4
+        p {{activity.type}}
+      .col-md-4
+        button.btn.btn-warning(ng-click='deleteActivity(activity.$id)') X
