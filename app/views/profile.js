@@ -45,6 +45,47 @@ angular
   //add ProfileFactory to the scope
   $scope.user = ProfileFactory;
 
+  $scope.classes.$loaded(function(klasses){
+
+    $scope.isSeniorClass = _.any(klasses, function(klass){
+      return klass.level === "Senior";
+    })
+
+    $scope.isJuniorClass = _.any(klasses, function(klass){
+      return klass.level === "Junior";
+    })
+
+    $scope.isSophomoreClass = _.any(klasses, function(klass){
+      return klass.level === "Sophomore";
+    })
+
+    $scope.isFreshmanClass = _.any(klasses, function(klass){
+      return klass.level === "Freshman";
+    })
+
+  });
+
+  $scope.activities.$loaded(function(activities){
+
+    $scope.isSeniorActivity = _.any(activities, function(activity){
+      return activity.level === "Senior";
+    })
+
+    $scope.isJuniorActivity = _.any(activities, function(activity){
+      return activity.level === "Junior";
+    })
+
+    $scope.isSophomoreActivity = _.any(activities, function(activity){
+      return activity.level === "Sophomore";
+    })
+
+    $scope.isFreshmanActivity = _.any(activities, function(activity){
+      return activity.level === "Freshman";
+    })
+
+
+  })
+
   $rootScope.$watch('profile', function(val){
     $scope.user = val;
     $scope.edituser = $firebaseObject($rootScope.profilefb);
