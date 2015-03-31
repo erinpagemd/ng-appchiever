@@ -62,7 +62,6 @@ angular
     $scope.isFreshmanClass = _.any(klasses, function(klass){
       return klass.level === "Freshman";
     })
-
   });
 
   $scope.activities.$loaded(function(activities){
@@ -82,8 +81,6 @@ angular
     $scope.isFreshmanActivity = _.any(activities, function(activity){
       return activity.level === "Freshman";
     })
-
-
   })
 
   $rootScope.$watch('profile', function(val){
