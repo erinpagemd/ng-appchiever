@@ -58,8 +58,11 @@ users - simplelogin - user  - activities [{level: 'Freshman', name: 'Soccer Team
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
-* once logged in, routes to profile page
 * confirm password matches to show register button
+* hide profile link if not logged in
+* bigger GET STARTED button
+* show new classes/activities sections without refreshing the page
+* GAMIFICATION!
 
 ## To Use:
 
