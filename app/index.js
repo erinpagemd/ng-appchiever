@@ -15,6 +15,7 @@ angular
     .state('profile', {url:'/profile', templateUrl:'views/profile.html', controller:'ProfileCtrl'})
 })
 .run(function($rootScope, AuthFactory, BASE_URL){
+  $rootScope.firsttime = true;
   $rootScope.auth = AuthFactory;
   $rootScope.auth.$onAuth(function(authData){
     $rootScope.authData = authData;

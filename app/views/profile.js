@@ -30,6 +30,7 @@ angular
   //add the class to firebase
   $scope.addClass = function() {
     $scope.classes.$add($scope.class);
+    $scope.class = null;
   }
 
   //add ActivityFactory to the scope
@@ -38,6 +39,7 @@ angular
   //add the activity to firebase
   $scope.addActivity = function() {
     $scope.activities.$add($scope.activity);
+    $scope.activity = null;
   }
 
   //add ProfileFactory to the scope
@@ -51,6 +53,7 @@ angular
   //save the profile in firebase
   $scope.save = function () {
     ProfileFactory.$add($scope.user);
+    $scope.firsttime = false;
   };
 
 });
