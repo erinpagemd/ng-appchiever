@@ -3,10 +3,16 @@ angular
 .controller('ProfileCtrl', function ($firebaseObject, $scope, ProfileFactory, ActivityFactory, ClassFactory, $rootScope) {
 
   $scope.deleteClass = function(id){
-    console.log(id);
     var classfb = $rootScope.usersfb.child('classes').child(id);
     var classobj = $firebaseObject(classfb);
     classobj.$remove();
+  }
+
+  $scope.deleteActivity = function(id){
+    console.log(id);
+    var activityfb = $rootScope.usersfb.child('activities').child(id);
+    var activityobj = $firebaseObject(activityfb)
+    activityobj.$remove();
   }
 
   $scope.update = function(){
