@@ -59,10 +59,7 @@ users - simplelogin - user  - activities [{level: 'Freshman', name: 'Soccer Team
 * deploy script
 * autoprefixer? Something for IE support
 * confirm password matches to show register button
-* hide profile link if not logged in
-* bigger GET STARTED button
 * show new classes/activities sections without refreshing the page
-* footer showing technologies used
 * GAMIFICATION!
 
 ## To Use:

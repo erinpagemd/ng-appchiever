@@ -8,6 +8,7 @@ angular
     classobj.$remove();
   }
 
+
   $scope.deleteActivity = function(id){
     console.log(id);
     var activityfb = $rootScope.usersfb.child('activities').child(id);
@@ -31,6 +32,7 @@ angular
   $scope.addClass = function() {
     $scope.classes.$add($scope.class);
     $scope.class = null;
+    classFilter($scope.classes);
   }
 
   //add ActivityFactory to the scope
@@ -45,8 +47,7 @@ angular
   //add ProfileFactory to the scope
   $scope.user = ProfileFactory;
 
-  $scope.classes.$loaded(function(klasses){
-
+  function classFilter(klasses){
     $scope.isSeniorClass = _.any(klasses, function(klass){
       return klass.level === "Senior";
     })
@@ -62,10 +63,14 @@ angular
     $scope.isFreshmanClass = _.any(klasses, function(klass){
       return klass.level === "Freshman";
     })
+  }
+
+  $scope.classes.$loaded(function(klasses){
+    classFilter(klasses);
   });
 
-  $scope.activities.$loaded(function(activities){
 
+  function activityFilter(activities){
     $scope.isSeniorActivity = _.any(activities, function(activity){
       return activity.level === "Senior";
     })
@@ -81,6 +86,18 @@ angular
     $scope.isFreshmanActivity = _.any(activities, function(activity){
       return activity.level === "Freshman";
     })
+  }
+
+  $scope.activities.$loaded(function(activities){
+    activityFilter(activities);
+  })
+
+  ClassFactory.$watch(function() {
+    classFilter(ClassFactory);
+  })
+
+  ActivityFactory.$watch(function(event) {
+    activityFilter(ActivityFactory);
   })
 
   $rootScope.$watch('profile', function(val){
