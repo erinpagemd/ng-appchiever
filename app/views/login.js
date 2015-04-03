@@ -7,8 +7,22 @@ angular
     if(authData){
       $scope.loggedin = true;
       $scope.registering = false;
+      console.log(authData);
     }
   });
+
+  $scope.googleAuth = function () {
+    var fb = new Firebase(BASE_URL);
+    fb.authWithOAuthPopup('google', function(error, authData) {
+      if (error){
+        console.log('Login Failed!', error);
+      } else {
+        console.log('Authenticated succesfully with payload:', authData);
+        console.log('rs.auth ', $rootScope.auth);
+        $location.path('/profile');
+      }
+    })
+  }
 
   $scope.createUser = function () {
     AuthFactory.$createUser($scope.user)

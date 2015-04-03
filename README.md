@@ -59,7 +59,7 @@ users - simplelogin - user  - activities [{level: 'Freshman', name: 'Soccer Team
 * deploy script
 * autoprefixer? Something for IE support
 * confirm password matches to show register button
-* show new classes/activities sections without refreshing the page
+* OAuth, social login
 * GAMIFICATION!
 
 ## To Use:
