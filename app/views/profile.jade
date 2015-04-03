@@ -1,5 +1,5 @@
 .col-md-12
-  .col-md-9
+  .col-md-9(ng-show='profile')
     .row.main-profile.main-form(ng-hide='editingprofile' ng-mouseover='hovering.profile=true' ng-mouseleave='hovering.profile=false')
       .col-md-6
         button(ng-show='hovering.profile' ng-click='editingprofile=true').btn.btn-default: i.fa.fa-pencil
@@ -48,11 +48,7 @@
         label(for='edit-picurl-profile') Picture URL
         input#edit-picurl-profile.form-control(ng-model='edituser.picurl' placeholder='picture url')
       .form-group
-        button.btn.btn-default(ng-click='update()') Finished Editing
-
-    include profile_levels
-    
-    include profile_modals              
+        button.btn.btn-default(ng-click='update()') Finished Editing             
     
   .col-md-3.col-right-profile
     .row
@@ -66,3 +62,7 @@
       h1 Points
       h1 Badges
       h1 GPA
+
+include profile_levels
+
+include profile_modals 

@@ -7,7 +7,6 @@ angular
     if(authData){
       $scope.loggedin = true;
       $scope.registering = false;
-      console.log(authData);
     }
   });
 
@@ -18,8 +17,9 @@ angular
         console.log('Login Failed!', error);
       } else {
         console.log('Authenticated succesfully with payload:', authData);
-        console.log('rs.auth ', $rootScope.auth);
+        $rootScope.auth = AuthFactory;
         $location.path('/profile');
+        debugger;
       }
     })
   }
