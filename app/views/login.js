@@ -1,25 +1,11 @@
 angular
 .module('appchiever')
 .controller('LoginCtrl', function ($location, $scope, AuthFactory, BASE_URL, $rootScope) {
-  $scope.auth = AuthFactory;
-
-  $rootScope.auth.$onAuth(function(authData){
-    if(authData){
-      $scope.loggedin = true;
-      $scope.registering = false;
-    }
-  });
-
   $scope.googleAuth = function () {
     var fb = new Firebase(BASE_URL);
     fb.authWithOAuthPopup('google', function(error, authData) {
-      if (error){
-        console.log('Login Failed!', error);
-      } else {
-        console.log('Authenticated succesfully with payload:', authData);
-        $rootScope.auth = AuthFactory;
+      if (!error){
         $location.path('/profile');
-        debugger;
       }
     })
   }
@@ -52,7 +38,7 @@ angular
     console.log('unauth');
     $rootScope.profile = null;
     $rootScope.usersfb = null;
-    $scope.loggedin = false;
+    $rootScope.loggedin = false;
   }
 
   $scope.showRegister = function () {

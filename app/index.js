@@ -22,6 +22,8 @@ angular
     if (authData) {
       var fb = new Firebase(BASE_URL);
       $rootScope.usersfb = fb.child('users').child(authData.uid);
+      $rootScope.loggedin = true;
+      $rootScope.registering = false;
       console.log(authData.uid);
       $rootScope.usersfb.on('value', function(data){
         var key = Object.keys(data.val().profile)[0]
@@ -29,6 +31,7 @@ angular
         $rootScope.profilefb = profilefb;
         var profile = data.val().profile[key];
         $rootScope.profile = profile;
+        debugger;
       })
     }
   })
