@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/Trophy-gold.ico">
+    <title>Appchiever</title>
+  </head>
+  <body ng-app="appchiever">
+    <div ng-controller="LoginCtrl" class="nav-container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button data-toggle="collapse" data-target="#navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a ui-sref="home" class="navbar-brand"><i class="fa fa-trophy">&nbsp Appchiever</i></a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="home"><i class="fa fa-home">&nbsp; Home</i></a></li>
+              <li><a ng-show="authData" ui-sref="profile"><i class="fa fa-user">&nbsp; Profile</i></a></li>
+              <li><a ui-sref="home" ng-click="unauthUser()"><i class="fa fa-sign-out">&nbsp; Logout</i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+  <div ui-view>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="vendor/lodash/lodash.js"></script>
+    <script src="vendor/firebase/firebase.js"></script>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angularfire/dist/angularfire.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="index.js"></script>
+    <script src="models/users.js"></script>
+    <script src="models/profiles.js"></script>
+    <script src="views/login.js"></script>
+    <script src="views/profile.js"></script>
+  </div>
+</html>

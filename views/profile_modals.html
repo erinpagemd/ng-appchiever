@@ -1,0 +1,150 @@
+
+<div class="row">   
+  <div id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Create Profile  </h1>
+        </div>
+        <div class="modal-body">
+          <form class="row main-form">
+            <div class="form-group">
+              <label for="firstname-profile">First Name</label>
+              <input id="firstname-profile" ng-model="user.firstname" placeholder="first name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="lastname-profile">Last Name</label>
+              <input id="lastname-profile" ng-model="user.lastname" placeholder="last name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="schoolname-profile">School Name</label>
+              <input id="schoolname-profile" ng-model="user.schoolname" placeholder="school name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="schoolmascot-profile">School Mascot</label>
+              <input id="schoolmascot-profile" ng-model="user.schoolmascot" placeholder="school mascot" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="gradyear-profile">Graduation Year</label>
+              <input id="gradyear-profile" ng-model="user.gradyear" placeholder="graduation year" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="gradcity-profile">City</label>
+              <input id="gradcity-profile" ng-model="user.gradcity" placeholder="city" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="gradstate-profile">State</label>
+              <input id="gradstate-profile" ng-model="user.gradstate" placeholder="state" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="picurl-profile">Picture URL</label>
+              <input id="picurl-profile" ng-model="user.picurl" placeholder="picture url" class="form-control">
+            </div>
+          </form>
+          <div class="modal-footer">
+            <button ng-click="save()" data-dismiss="modal" class="btn btn-info">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="classModal" tabindex="-1" role="dialog" aria-labelledby="classModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Add Class </h1>
+        </div>
+        <div class="modal-body">
+          <form class="row main-form">
+            <div class="form-group">
+              <input ng-model="class.name" placeholder="class name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Class Year</label>
+              <select ng-model="class.level">
+                <option value="Freshman" selected>Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Grade</label>
+              <select ng-model="class.grade">
+                <option value="A">90-100+</option>
+                <option value="B">80-89</option>
+                <option value="C">70-79</option>
+                <option value="F"><69</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Class Credits</label>
+              <select ng-model="class.hours">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5            </option>
+              </select>
+            </div>
+          </form>
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default">Close</button>
+            <button ng-click="addClass()" data-dismiss="modal" class="btn btn-info">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="activityModal" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Add Activity</h1>
+        </div>
+        <div class="modal-body">
+          <form class="row main-form">
+            <div class="form-group">
+              <input ng-model="activity.name" placeholder="activity name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Activity Type</label>
+              <select ng-model="activity.type">
+                <option value="Band" selected>Band</option>
+                <option value="Honor roll">Honor Roll</option>
+                <option value="Intern">Internship</option>
+                <option value="Co-op">Co-op</option>
+                <option value="Volunteer">Volunteer</option>
+                <option value="Society">Society</option>
+                <option value="Award">Award</option>
+                <option value="Theatre">Theatre</option>
+                <option value="Sports">Sports</option>
+                <option value="Club">Club</option>
+                <otpion value="SGA">Student Government</otpion>
+                <option value="ROTC">ROTC</option>
+                <option value="Competitions">Competitions</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Class Year</label>
+              <select ng-model="activity.level">
+                <option value="Freshman" selected>Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default">Close</button>
+          <button ng-click="addActivity()" data-dismiss="modal" class="btn-btn-info">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

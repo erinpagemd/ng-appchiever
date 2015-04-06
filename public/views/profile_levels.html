@@ -1,0 +1,125 @@
+
+<div ng-show="isSeniorClass || isSeniorActivity" class="row summary-section main-form">
+  <h1>Senior Year</h1>
+  <div ng-show="isSeniorClass" class="container">
+    <h2>Classes</h2>
+    <div ng-repeat="class in classes | filter: &quot;Senior&quot;" class="row">
+      <div class="col-md-4">
+        <p>{{class.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{class.grade}} </p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteClass(class.$id)" class="btn btn-warning">X  </button>
+      </div>
+    </div>
+  </div>
+  <div ng-show="isSeniorActivity" class="container">
+    <h2>Activities</h2>
+    <div ng-repeat="activity in activities | filter: &quot;Senior&quot;" class="row">
+      <div class="col-md-4">
+        <p>{{activity.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{activity.type}}</p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteActivity(activity.$id)" class="btn btn-warning">X</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="isJuniorClass || isJuniorActivity" class="row summary-section main-form">
+  <h1>Junior Year</h1>
+  <div ng-show="isJuniorClass" class="container">
+    <h2>Classes</h2>
+    <div ng-repeat="class in classes | filter: &quot;Junior&quot;" class="row">
+      <div class="col-md-4"> 
+        <p>{{class.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{class.grade}} </p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteClass(class.$id)" class="btn btn-warning">X  </button>
+      </div>
+    </div>
+  </div>
+  <div ng-show="isJuniorActivity" class="container">
+    <h2>Activities</h2>
+    <div ng-repeat="activity in activities | filter: &quot;Junior&quot;" class="row">
+      <div class="col-md-4">
+        <p>{{activity.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{activity.type}}</p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteActivity(activity.$id)" class="btn btn-warning">X</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="isSophomoreClass || isSophomoreActivity" class="row summary-section main-form">
+  <h1>Sophomore Year</h1>
+  <div ng-show="isSophomoreClass" class="container">
+    <h2>Classes</h2>
+    <div ng-repeat="class in classes | filter: &quot;Sophomore&quot;" class="row">
+      <div class="col-md-4"> 
+        <p>{{class.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{class.grade}} </p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteClass(class.$id)" class="btn btn-warning">X  </button>
+      </div>
+    </div>
+  </div>
+  <div ng-show="isSophomoreActivity" class="container">
+    <h2>Activities</h2>
+    <div ng-repeat="activity in activities | filter: &quot;Sophomore&quot;" class="row">
+      <div class="col-md-4">
+        <p>{{activity.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{activity.type}}</p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteActivity(activity.$id)" class="btn btn-warning">X</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="isFreshmanClass || isFreshmanActivity" class="row summary-section main-form">
+  <h1>Freshman Year</h1>
+  <div ng-show="isFreshmanClass" class="container">
+    <h2>Classes</h2>
+    <div ng-repeat="class in classes | filter: &quot;Freshman&quot;" class="row">
+      <div class="col-md-4">
+        <p>{{class.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{class.grade}} </p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteClass(class.$id)" class="btn btn-warning">X  </button>
+      </div>
+    </div>
+  </div>
+  <div ng-show="isFreshmanActivity" class="container">
+    <h2>Activities</h2>
+    <div ng-repeat="activity in activities | filter: &quot;Freshman&quot;" class="row">
+      <div class="col-md-4">
+        <p>{{activity.name}} </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{activity.type}}</p>
+      </div>
+      <div class="col-md-4">
+        <button ng-click="deleteActivity(activity.$id)" class="btn btn-warning">X</button>
+      </div>
+    </div>
+  </div>
+</div>
