@@ -13,8 +13,9 @@ angular
   $stateProvider
     .state('home', {url:'/', templateUrl:'views/login.html', controller:'LoginCtrl'})
     .state('profile', {url:'/profile', templateUrl:'views/profile.html', controller:'ProfileCtrl'})
+    .state('career', {url: '/career', templateUrl:'views/career.html', controller:'CareerCtrl'})
 })
-.run(function($rootScope, AuthFactory, BASE_URL){
+.run(function($http, $rootScope, AuthFactory, BASE_URL){
   $rootScope.firsttime = true;
   $rootScope.auth = AuthFactory;
   $rootScope.auth.$onAuth(function(authData){
@@ -31,7 +32,6 @@ angular
         $rootScope.profilefb = profilefb;
         var profile = data.val().profile[key];
         $rootScope.profile = profile;
-        debugger;
       })
     }
   })
