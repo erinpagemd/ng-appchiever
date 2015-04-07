@@ -31,25 +31,30 @@ angular
   $scope.calculateGpa = function () {
     var klasses = $scope.classes;
     var grades = [];
+    var hours = [];
 
     _.forEach(klasses, function (klass){
-      grades.push(klass.grade);
-    });
+      hours.push(klass.hours * 1);
+      if (klass.grade === 'A'){
+        grades.push(4 * klass.hours);
+      } else if (klass.grade === 'B'){
+        grades.push(3 * klass.hours);
+      } else if (klass.grade === 'C'){
+        grades.push(2 * klass.hours);
+      } else {
+        grades.push(0);
+      }
+    })
 
-    var gradeAs = _.filter(grades, function (grade){
-      return grade === 'A';
-    });
+    var gradesSum = _.reduce(grades, function(sum, n){
+      return sum + n
+    })
 
-    var gradeBs = _.filter(grades, function (grade){
-      return grade === 'B';
-    });
+    var hoursSum = _.reduce(hours, function(sum, n){
+      return sum + n
+    })
 
-    var gradeCs = _.filter(grades, function (grade){
-      return grade === 'C';
-    });
-
-    $scope.totalgpa = ((4 * gradeAs.length) + (3 * gradeBs.length) + (2 * gradeCs.length)) / grades.length
-
+    $scope.totalgpa = gradesSum / hoursSum;
   }
 
   //add the class to firebase
