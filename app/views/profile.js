@@ -28,6 +28,30 @@ angular
   //add ClassFactory to the scope
   $scope.classes = ClassFactory;
 
+  $scope.calculateGpa = function () {
+    var klasses = $scope.classes;
+    var grades = [];
+
+    _.forEach(klasses, function (klass){
+      grades.push(klass.grade);
+    });
+
+    var gradeAs = _.filter(grades, function (grade){
+      return grade === 'A';
+    });
+
+    var gradeBs = _.filter(grades, function (grade){
+      return grade === 'B';
+    });
+
+    var gradeCs = _.filter(grades, function (grade){
+      return grade === 'C';
+    });
+
+    $scope.totalgpa = ((4 * gradeAs.length) + (3 * gradeBs.length) + (2 * gradeCs.length)) / grades.length
+
+  }
+
   //add the class to firebase
   $scope.addClass = function() {
     $scope.classes.$add($scope.class);

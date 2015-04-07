@@ -63,6 +63,7 @@
           button.btn.btn-primary.btn-lg(ng-hide='profile' type='button' data-toggle='modal' data-target='#profileModal') Create Profile
       h1 Points
       h1 Badges
-      h1 GPA
+      h1(ng-model='totalgpa') GPA {{totalgpa}}
+        button.btn.btn-default.btn-large(ng-click='calculateGpa()') Calculate GPA
 
 include profile_modals 
