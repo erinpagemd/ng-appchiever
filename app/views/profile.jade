@@ -61,9 +61,16 @@
           button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#activityModal') Add new activity
         .form-group
           button.btn.btn-primary.btn-lg(ng-hide='profile' type='button' data-toggle='modal' data-target='#profileModal') Create Profile
+    .row
       h1 Points
+    .row
       h1 Badges
-      h1(ng-model='totalgpa') GPA {{totalgpa}}
-        button.btn.btn-default.btn-large(ng-click='calculateGpa()') Calculate GPA
+    .row.profile-gpa.main-form
+      .col-md-5
+        h1(ng-model='totalgpa') {{totalgpa | number:2}} 
+      .col-md-7
+        h4 weighted cummulative GPA
+    .row
+      button.btn.btn-default.btn-large(ng-click='calculateGpa()') Calculate GPA
 
 include profile_modals 

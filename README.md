@@ -52,15 +52,20 @@ users - simplelogin - user  - activities [{level: 'Freshman', name: 'Soccer Team
 * AngularFire
 
 ## Features:
-* Firebase Login
+* AngularFire Databinding
+* Google OAuth
+* ONet Interest Profiler
 
 ### What is coming next
 * live reload
 * deploy script
 * autoprefixer? Something for IE support
 * confirm password matches to show register button
-* OAuth, social login
-* GAMIFICATION!
+* OAuth, social login - put in trouble ticket
+* GPA rounded to 2 decimals on the page
+* calculate GPA without button
+* move GPA calculation to a factory??
+* style GPA
 
 ## To Use:
 
