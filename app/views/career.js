@@ -19,6 +19,7 @@ angular
       console.log('success', res);
     }).error(function(err){
       console.log('error', err);
+      alert("Feature coming soon");
     })
 
   }

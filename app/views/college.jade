@@ -1,0 +1,10 @@
+.container-fluid
+  .row
+    h1 colleges I am interested in pursuing
+    button.btn.btn-info(ng-click='getColleges()') Look for Colleges
+
+  .row
+    h2 Colleges
+    .row(ng-repeat='college in colleges')
+      p {{college.FIELD2}}
+  

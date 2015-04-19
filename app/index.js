@@ -13,7 +13,8 @@ angular
   $stateProvider
     .state('home', {url:'/', templateUrl:'views/login.html', controller:'LoginCtrl'})
     .state('profile', {url:'/profile', templateUrl:'views/profile.html', controller:'ProfileCtrl'})
-    .state('career', {url: '/career', templateUrl:'views/career.html', controller:'CareerCtrl'})
+    .state('career', {url:'/career', templateUrl:'views/career.html', controller:'CareerCtrl'})
+    .state('colleges', {url:'/college', templateUrl:'views/college.html', controller:'CollegeCtrl'})
 })
 .run(function($http, $rootScope, AuthFactory, BASE_URL){
   $rootScope.firsttime = true;
